@@ -25,3 +25,11 @@ sources:
       tables:
           - name: payment
             description: One record per customer.
+    
+    - name: dbt_tm
+      description: This is a replica of the Postgres database used by our app
+      database: dbt_database
+      schema: dbt_tm
+      tables:
+          - name: customer_country
+            description: One record per customer.

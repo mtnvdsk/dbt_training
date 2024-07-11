@@ -20,7 +20,15 @@ orders as (
     from {{ ref('stg_oders') }}
  
 ),
- 
+
+c as(
+
+    select 
+        country_id,
+        country
+
+    from customer_country
+),
 customer_orders as (
  
     select
@@ -43,9 +51,10 @@ final as (
         customers.last_name,
         customer_orders.first_order_date,
         customer_orders.most_recent_order_date,
-        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+        --coalesce(customer_orders.number_of_orders, 0) as number_of_orders,
+        c.country
  
-    from customers
+    from customers,c
  
     left join customer_orders using (customer_id)
  
