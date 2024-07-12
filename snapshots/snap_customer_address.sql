@@ -2,7 +2,7 @@
     {{
         config(
             target_schema='snap_july',
-            target_database='dbt_database',
+            target_database='database',
             unique_key='customer_id',
             strategy='timestamp',
             updated_at='updated_at'
