@@ -25,6 +25,10 @@ sources:
       tables:
           - name: payment
             description: One record per customer.
+          - name: customer_address
+            description: One record per customer.
+          - name: order_status
+            description: One record per customer.
     
     - name: dbt_tm
       description: This is a replica of the Postgres database used by our app
@@ -33,3 +37,4 @@ sources:
       tables:
           - name: customer_country
             description: One record per customer.
+          
